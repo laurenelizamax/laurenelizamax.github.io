@@ -1506,3 +1506,7 @@ body.is-loading #banner:before {
 .title {
   text-align: center;
 }
+.avatar {
+  max-width: 300px;
+  max-height: 300px;
+}
