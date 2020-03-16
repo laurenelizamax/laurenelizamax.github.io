@@ -172,7 +172,7 @@ body {
 }
 
 body {
-  background: #023859;
+  background: #f5ecec;
 }
 
 body.is-loading *,
@@ -503,8 +503,8 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #ff8686;
-  box-shadow: 0 0 0 1px #ff8686;
+  border-color: #fafafa;
+  box-shadow: 0 0 0 1px #fffafa;
 }
 
 .select-wrapper {
@@ -606,16 +606,16 @@ input[type="radio"] + label:before {
 
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
-  background: #ff8686;
-  border-color: #ff8686;
+  background: #fff3f3;
+  border-color: #fcebeb;
   color: #ffffff;
   content: "\f00c";
 }
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #ff8686;
-  box-shadow: 0 0 0 1px #ff8686;
+  border-color: #f5eded;
+  box-shadow: 0 0 0 1px #f8f2f2;
 }
 
 input[type="checkbox"] + label:before {
@@ -656,7 +656,7 @@ input[type="radio"] + label:before {
 .box {
   border-radius: 4px;
   margin-bottom: 2em;
-  background: #012840;
+  background: #94010b;
   text-align: center;
 }
 
@@ -1520,4 +1520,8 @@ body.is-loading #banner:before {
 }
 .tech {
   text-align: center;
+  color: #012840;
+}
+button {
+  color: #012840;
 }
