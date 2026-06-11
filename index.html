@@ -68,6 +68,15 @@ nav { padding: 2.2rem 0; }
   color: var(--ink-soft); max-width: 26em; line-height: 1.6;
 }
 .hero-line strong { color: var(--ink); font-weight: 500; }
+  .hero-line { position: relative; }
+.hero-line .ghost { visibility: hidden; }
+.hero-line .typed { position: absolute; inset: 0; }
+.type-cursor {
+  display: inline-block; width: 2px; height: 1.05em; background: var(--ink);
+  vertical-align: text-bottom; margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 .hero-foot { margin-top: auto; padding-top: 3rem; }
 .hero-handle { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.9rem; }
 .social-row { display: flex; gap: 1.1rem; }
@@ -197,8 +206,10 @@ footer { padding: 2rem 0 3rem; }
   <div class="frame hero-box">
     <div class="hero-left">
       <h1 class="hero-name">Lauren Maxwell</h1>
-      <p class="hero-line">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</p>
-      <div class="hero-foot">
+<p class="hero-line">
+  <span class="ghost" aria-hidden="true">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</span>
+  <span class="typed">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</span>
+</p>      <div class="hero-foot">
         <div class="hero-handle">@laurenelizamax</div>
         <div class="social-row">
           <a href="https://github.com/laurenelizamax" target="_blank" rel="noopener" aria-label="GitHub">
@@ -333,5 +344,47 @@ footer { padding: 2rem 0 3rem; }
   </div>
 </footer>
 
+
+  <script>
+(function () {
+  var typed = document.querySelector('.hero-line .typed');
+  if (!typed) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var segments = Array.prototype.map.call(typed.childNodes, function (node) {
+    return { bold: node.nodeType === 1 && node.tagName === 'STRONG', text: node.textContent };
+  });
+  typed.textContent = '';
+
+  var cursor = document.createElement('span');
+  cursor.className = 'type-cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  typed.appendChild(cursor);
+
+  var si = 0, ci = 0, target = null;
+
+  function nextTarget() {
+    target = segments[si].bold ? document.createElement('strong') : document.createTextNode('');
+    typed.insertBefore(target, cursor);
+  }
+
+  function tick() {
+    if (si >= segments.length) {
+      setTimeout(function () { cursor.remove(); }, 2200);
+      return;
+    }
+    if (!target) nextTarget();
+    var seg = segments[si];
+    var ch = seg.text.charAt(ci++);
+    if (seg.bold) { target.textContent += ch; } else { target.nodeValue += ch; }
+    if (ci >= seg.text.length) { si++; ci = 0; target = null; }
+    var delay = 24 + Math.random() * 40;
+    if (',.'.indexOf(ch) > -1) delay += 220;
+    setTimeout(tick, delay);
+  }
+
+  setTimeout(tick, 650);
+})();
+</script>
 </body>
 </html>
