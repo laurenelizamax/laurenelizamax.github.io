@@ -3,431 +3,328 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lauren Maxwell — Software Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Lauren Maxwell — Front-End Developer</title>
+<meta name="description" content="Lauren Maxwell is a front-end developer in Nashville, TN with six years building production web applications in React, TypeScript, and .NET.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg:       #F3F5F8;
-  --bg-mid:   #E8EDF3;
-  --bg-deep:  #DDE4EE;
-  --rule:     #CAD4E0;
-  --ink:      #1A2433;
-  --ink-mid:  #4A5A6E;
-  --ink-soft: #6E7F93;
-  --blue:     #3A6EA8;
-  --blue-dark:#1E4A7A;
-  --blue-pale:#DCE8F5;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans:  'Mulish', system-ui, sans-serif;
+  --cream: #ECE5E0;
+  --cream-deep: #E0D6CF;
+  --ink: #1F2D31;
+  --ink-soft: #5D6468;
+  --mocha: #16262B;
+  --coral: #AF4F51;
+  --line: #1F2D31;
 }
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--sans); background: var(--bg); color: var(--ink); overflow-x: hidden; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
 
 /* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0 4rem; height: 56px;
-  background: rgba(243,245,248,0.95);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--rule);
+nav { padding: 2.2rem 0; }
+.nav-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.nav-row a {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  text-decoration: none; padding: 0.3rem 0; border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
 }
-.nav-logo { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--blue); }
+.nav-row a:hover { border-color: var(--ink); }
+
+/* FRAMED BOX MOTIF */
+.frame { border: 1.5px solid var(--line); background: var(--cream); }
 
 /* HERO */
-.hero {
-  padding: 120px 4rem 0;
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: end; min-height: 100vh;
-  border-bottom: 1px solid var(--rule);
-}
-.hero-left { padding-bottom: 5rem; }
-.hero-kicker {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--blue); margin-bottom: 1.5rem;
-  display: flex; align-items: center; gap: 0.75rem;
-}
-.hero-kicker::before { content: ''; display: block; width: 32px; height: 1px; background: var(--blue); }
+#bio { padding: 0.5rem 0 3rem; }
+.hero-box { display: grid; grid-template-columns: 1.1fr 0.9fr; min-height: 540px; animation: rise 0.7s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.hero-left { padding: 4rem 4rem 2.5rem; display: flex; flex-direction: column; }
 .hero-name {
-  font-family: var(--serif);
-  font-size: clamp(4rem, 9vw, 7.5rem);
-  font-weight: 700; line-height: 0.95;
-  color: var(--blue-dark); margin-bottom: 2rem;
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-weight: 700; line-height: 1.02; letter-spacing: -0.02em;
+  margin-bottom: 1.6rem;
 }
-.hero-desc { font-size: 1.05rem; font-weight: 300; color: var(--ink-mid); max-width: 420px; line-height: 1.85; margin-bottom: 2.5rem; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn-fill {
-  display: inline-block; padding: 0.8rem 1.75rem;
-  background: var(--ink); color: var(--bg);
-  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-  text-decoration: none; border-radius: 2px; transition: background 0.2s;
+.hero-line {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem); font-weight: 400;
+  color: var(--ink-soft); max-width: 26em; line-height: 1.6;
 }
-.btn-fill:hover { background: var(--blue); }
-.btn-ghost {
-  display: inline-block; padding: 0.8rem 1.75rem;
-  border: 1px solid var(--rule); color: var(--ink-mid);
-  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-  text-decoration: none; border-radius: 2px; transition: all 0.2s;
-}
-.btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+.hero-line strong { color: var(--ink); font-weight: 500; }
+.hero-foot { margin-top: auto; padding-top: 3rem; }
+.hero-handle { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.9rem; }
+.social-row { display: flex; gap: 1.1rem; }
+.social-row a { display: inline-flex; transition: transform 0.15s; }
+.social-row a:hover { transform: translateY(-2px); }
+.social-row svg { width: 26px; height: 26px; fill: var(--ink); }
 
-.hero-right {
-  border-left: 1px solid var(--rule);
-  padding: 0 0 5rem 4rem;
-  display: flex; flex-direction: column; justify-content: flex-end; gap: 2.5rem;
-}
-.hero-stat-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.35rem; }
-.hero-stat-value { font-family: var(--serif); font-weight: 600; font-size: 2.15rem; color: var(--ink); }
+/* CODE PANEL (photo slot) */
+.hero-panel { background: var(--mocha); border-left: 1.5px solid var(--line); overflow: hidden; }
+.hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* MARQUEE */
-.marquee-strip { background: var(--ink); overflow: hidden; white-space: nowrap; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); }
-.marquee-inner { display: inline-block; animation: marquee 24s linear infinite; }
-.marquee-inner span { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(243,245,248,0.4); margin: 0 2rem; }
-.marquee-inner span.hi { color: #7AAFD4; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* SECTION SHELL */
+section { padding: 2.2rem 0; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.6rem 2.5rem; border-bottom: 1.5px solid var(--line); flex-wrap: wrap; }
+.sec-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.01em; }
+.sec-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
 
 /* ABOUT */
-#about { padding: 7rem 4rem; border-bottom: 1px solid var(--rule); }
-.about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; max-width: 1100px; margin: 0 auto; align-items: start; }
-.about-aside-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1rem; }
-.about-aside-heading { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; color: var(--ink); line-height: 1.2; margin-bottom: 2rem; }
-.about-aside-heading em { font-style: italic; color: var(--blue); }
-.about-stat { border-top: 1px solid var(--rule); padding: 1rem 0; }
-.about-stat:last-child { border-bottom: 1px solid var(--rule); }
-.about-stat-n { font-family: var(--serif); font-weight: 600; font-size: 2.4rem; color: var(--ink); line-height: 1; }
-.about-stat-desc { font-size: 0.8rem; color: var(--ink-soft); margin-top: 0.25rem; }
-.about-body p { font-size: 1.05rem; font-weight: 300; color: var(--ink-mid); line-height: 1.9; margin-bottom: 1.25rem; }
-.about-body p strong { color: var(--ink); font-weight: 500; }
-.about-body p:last-child { margin-bottom: 0; }
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; }
+.about-text { padding: 2.5rem; border-right: 1.5px solid var(--line); }
+.about-text p { margin-bottom: 1.1rem; max-width: 56ch; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-text strong { font-weight: 500; }
+.fact-stack { display: flex; flex-direction: column; }
+.fact { padding: 1.5rem 2.5rem; border-bottom: 1.5px solid var(--line); }
+.fact:last-child { border-bottom: none; }
+.fact-n { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+.fact-d { font-size: 0.85rem; color: var(--ink-soft); }
 
 /* EXPERIENCE */
-#experience { padding: 7rem 4rem; border-bottom: 1px solid var(--rule); }
-.exp-list { max-width: 1100px; margin: 0 auto; }
-.exp-row { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; border-top: 1px solid var(--rule); padding: 2.5rem 0; }
-.exp-row:last-child { border-bottom: 1px solid var(--rule); }
-.exp-dates { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.5rem; }
-.exp-company { font-family: var(--serif); font-weight: 600; font-size: 1.55rem; color: var(--ink); line-height: 1.25; }
-.exp-role { font-size: 0.85rem; color: var(--blue); margin-top: 0.35rem; }
-.exp-body p { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1rem; }
-.exp-body p:last-of-type { margin-bottom: 0; }
-.exp-body strong { color: var(--ink); font-weight: 500; }
-.exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+.exp { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1.5px solid var(--line); }
+.exp:last-child { border-bottom: none; }
+.exp-meta { padding: 2.5rem; border-right: 1.5px solid var(--line); }
+.exp-dates { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--coral); margin-bottom: 0.4rem; }
+.exp-co { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+.exp-role { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.3rem; }
+.exp-body { padding: 2.5rem; }
+.exp-body p { margin-bottom: 1rem; max-width: 62ch; }
+.exp-body strong { font-weight: 500; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.2rem; }
+.tag {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
+  border: 1px solid var(--ink); border-radius: 99px; padding: 0.25rem 0.75rem;
+}
 
 /* PROJECTS */
-#projects { padding: 7rem 4rem; border-bottom: 1px solid var(--rule); background: var(--bg-mid); }
-.section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
-.section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
-.section-heading { font-family: var(--serif); font-weight: 600; font-size: clamp(2.15rem, 4vw, 3rem); color: var(--ink); }
-.project-list { max-width: 1100px; margin: 0 auto; }
-.project-row {
-  display: grid; grid-template-columns: 80px 1fr 280px;
-  align-items: stretch; border-top: 1px solid var(--rule);
-  transition: background 0.2s;
+.proj { display: grid; grid-template-columns: 1fr 0.85fr; border-bottom: 1.5px solid var(--line); }
+.proj:last-child { border-bottom: none; }
+.proj-body { padding: 2.5rem; display: flex; flex-direction: column; align-items: flex-start; }
+.proj-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.7rem; }
+.proj-desc { max-width: 50ch; }
+.proj-link {
+  margin-top: 1.4rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; border-bottom: 2px solid var(--ink); padding-bottom: 0.2rem;
 }
-.project-row:last-child { border-bottom: 1px solid var(--rule); }
-.project-row:hover { background: var(--bg); }
-.project-num {
-  font-family: var(--serif); font-size: 3rem; font-weight: 700;
-  color: var(--rule); padding: 2.2rem 0 2rem 0.5rem;
-  line-height: 1; align-self: start; transition: color 0.2s;
-}
-.project-row:hover .project-num { color: #7AAFD4; }
-.project-body { padding: 2rem 2rem 2rem 1.5rem; border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); }
-.project-title { font-family: var(--serif); font-weight: 600; font-size: 1.65rem; color: var(--ink); margin-bottom: 0.5rem; }
-.project-desc { font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.7; margin-bottom: 1rem; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.65rem; background: var(--blue-pale); color: var(--blue-dark); border-radius: 2px; }
-.project-img-wrap { overflow: hidden; }
-.project-img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 160px; filter: grayscale(15%) sepia(5%); transition: transform 0.4s, filter 0.3s; }
-.project-row:hover .project-img { transform: scale(1.04); filter: none; }
-.project-link-row { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.78rem; font-weight: 500; color: var(--blue); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
-.project-link-row:hover { color: var(--ink); }
+.proj-link:hover { color: var(--coral); border-color: var(--coral); }
+.proj-img-wrap { border-left: 1.5px solid var(--line); background: var(--cream-deep); padding: 2rem; display: flex; align-items: center; }
+.proj-img { width: 100%; display: block; border: 1.5px solid var(--line); }
 
 /* SKILLS */
-#technologies { padding: 7rem 4rem; border-bottom: 1px solid var(--rule); }
-.skills-wrap { max-width: 1100px; margin: 0 auto; }
-.skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 3rem; }
-.skill-cell { background: var(--bg); padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; transition: background 0.2s; }
-.skill-cell:hover { background: var(--bg-deep); }
-.skill-cell img { width: 36px; height: 36px; object-fit: contain; opacity: 0.5; transition: opacity 0.2s; }
-.skill-cell:hover img { opacity: 1; }
-.skill-name { font-size: 0.72rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0.06em; transition: color 0.2s; }
-.skill-cell:hover .skill-name { color: var(--ink); }
+.skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.skill-cell {
+  padding: 1.4rem 1rem; border-right: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line);
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-align: center;
+}
+.skill-cell:nth-child(4n) { border-right: none; }
+.skill-cell:nth-last-child(-n+4) { border-bottom: none; }
 
 /* CONTACT */
-#contact { padding: 8rem 4rem; background: var(--ink); }
-.contact-inner { max-width: 700px; margin: 0 auto; }
-.contact-kicker { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #7AAFD4; margin-bottom: 1rem; }
-.contact-heading { font-family: var(--serif); font-weight: 600; font-size: clamp(2.65rem, 5vw, 4.25rem); color: var(--bg); line-height: 1.1; margin-bottom: 1.5rem; }
-.contact-heading em { font-style: italic; color: #7AAFD4; }
-.contact-sub { font-size: 1rem; font-weight: 300; color: rgba(243,245,248,0.5); margin-bottom: 3rem; line-height: 1.8; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.07); }
-.contact-cell { background: var(--ink); padding: 1.5rem; text-decoration: none; transition: background 0.2s; display: flex; flex-direction: column; gap: 0.3rem; }
-.contact-cell:hover { background: #243347; }
-.contact-cell-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(243,245,248,0.3); font-weight: 500; }
-.contact-cell-value { font-size: 0.95rem; color: rgba(243,245,248,0.8); font-weight: 300; }
-
-footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.25rem 4rem; display: flex; justify-content: space-between; align-items: center; }
-footer span { font-size: 0.75rem; color: rgba(243,245,248,0.25); }
-
-@media (max-width: 900px) {
-  nav { padding: 0 2rem; }
-  .nav-links { gap: 1.5rem; }
-  .hero { grid-template-columns: 1fr; padding: 100px 2rem 0; min-height: auto; }
-  .hero-left { padding-bottom: 3rem; }
-  .hero-right { border-left: none; border-top: 1px solid var(--rule); padding: 2.5rem 0; }
-  #about, #experience, #projects, #technologies, #contact { padding: 5rem 2rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .exp-row { grid-template-columns: 1fr; gap: 1.25rem; }
-  .project-row { grid-template-columns: 60px 1fr; }
-  .project-img-wrap { display: none; }
-  .skills-grid { grid-template-columns: repeat(3, 1fr); }
-  .contact-grid { grid-template-columns: 1fr; }
-  footer { padding: 1.25rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+.contact-inner { padding: 4rem 2.5rem; text-align: center; }
+.contact-h { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; }
+.contact-sub { color: var(--ink-soft); max-width: 44ch; margin: 0 auto 2.5rem; }
+.contact-links { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; }
+.contact-links a {
+  text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1.5px solid var(--ink); padding: 0.85rem 1.6rem; transition: background 0.2s, color 0.2s;
 }
-@media (max-width: 600px) {
-  .nav-links { display: none; }
-  .hero-name { font-size: 3.5rem; }
+.contact-links a:hover { background: var(--ink); color: var(--cream); }
+footer { padding: 2rem 0 3rem; }
+.foot-row { display: flex; justify-content: space-between; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); flex-wrap: wrap; gap: 0.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .wrap { padding: 0 1.25rem; }
+  .nav-row { justify-content: center; gap: 1.4rem; }
+  .hero-box, .about-grid, .exp, .proj { grid-template-columns: 1fr; }
+  .hero-left { padding: 2.5rem 1.75rem 2rem; }
+  .hero-panel, .about-text, .exp-meta, .proj-img-wrap { border-left: none; border-right: none; }
+  .hero-panel { border-top: 1.5px solid var(--line); max-height: 420px; }
+  .about-text, .exp-meta { border-bottom: 1.5px solid var(--line); }
+  .about-text, .exp-meta, .exp-body, .proj-body { padding: 1.75rem 1.5rem; }
+  .fact, .sec-head { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .proj-img-wrap { border-top: 1.5px solid var(--line); }
+  .skill-grid { grid-template-columns: repeat(2, 1fr); }
+  .skill-cell:nth-child(4n) { border-right: 1.5px solid var(--line); }
+  .skill-cell:nth-child(2n) { border-right: none; }
+  .skill-cell:nth-last-child(-n+4) { border-bottom: 1.5px solid var(--line); }
+  .skill-cell:nth-last-child(-n+2) { border-bottom: none; }
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">Lauren Maxwell</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Work</a></li>
-    <li><a href="#technologies">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<nav class="wrap" aria-label="Main">
+  <div class="nav-row">
+    <a href="#bio">Bio</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-left">
-    <p class="hero-kicker">Front-End Developer · React &amp; TypeScript</p>
-    <h1 class="hero-name">Lauren<br>Maxwell</h1>
-    <p class="hero-desc">Front-end-focused developer with six years shipping production web applications — owning UI/UX decisions, component architecture, and server-state management in React and TypeScript, and working full-stack across C#/.NET Core and Azure DevOps.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-fill">See my work</a>
-      <a href="https://laurenelizamax.github.io/assets/LMResume.pdf" target="_blank" class="btn-ghost">Download résumé</a>
+<section id="bio" class="wrap">
+  <div class="frame hero-box">
+    <div class="hero-left">
+      <h1 class="hero-name">Lauren Maxwell</h1>
+      <p class="hero-line">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</p>
+      <div class="hero-foot">
+        <div class="hero-handle">@laurenelizamax</div>
+        <div class="social-row">
+          <a href="https://github.com/laurenelizamax" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.22 19.88c.51.1.7-.22.7-.49v-1.71c-2.84.62-3.44-1.37-3.44-1.37-.46-1.18-1.13-1.49-1.13-1.49-.93-.63.07-.62.07-.62 1.03.07 1.57 1.06 1.57 1.06.91 1.57 2.39 1.11 2.97.85.09-.66.36-1.11.65-1.37-2.27-.26-4.65-1.13-4.65-5.04 0-1.11.4-2.02 1.05-2.74-.1-.26-.46-1.3.1-2.7 0 0 .86-.28 2.8 1.05a9.73 9.73 0 0 1 5.1 0c1.94-1.33 2.8-1.05 2.8-1.05.56 1.4.2 2.44.1 2.7.65.72 1.05 1.63 1.05 2.74 0 3.92-2.39 4.78-4.66 5.03.37.32.69.94.69 1.9v2.81c0 .27.18.6.7.49A10.2 10.2 0 0 0 12 1.8Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/laureneliza/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48a2.49 2.49 0 0 1-.02-4.98ZM3 9.75h4v11H3v-11Zm6.5 0h3.83v1.5h.06c.53-1 1.84-2.06 3.78-2.06 4.05 0 4.8 2.66 4.8 6.12v5.44h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11Z"/></svg>
+          </a>
+          <a href="mailto:laurenelizamax@yahoo.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.35 8-5.2V7l-8 5.2L4 7v.15l8 5.2ZM4 17h16V9.6l-8 5.2-8-5.2V17Z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <div>
-      <div class="hero-stat-label">Experience</div>
-      <div class="hero-stat-value">6 years</div>
-    </div>
-    <div>
-      <div class="hero-stat-label">Stack</div>
-      <div class="hero-stat-value">React · TypeScript · .NET</div>
-    </div>
-    <div>
-      <div class="hero-stat-label">Based in</div>
-      <div class="hero-stat-value">Nashville, TN</div>
+    <div class="hero-panel">
+      <img class="hero-photo" src="images/hero.jpg" alt="Hands typing on a vintage typewriter at an outdoor market">
     </div>
   </div>
 </section>
 
-<div class="marquee-strip">
-  <div class="marquee-inner">
-    <span class="hi">React</span><span>·</span>
-    <span>TypeScript</span><span>·</span>
-    <span class="hi">C# / .NET Core</span><span>·</span>
-    <span>SQL Server</span><span>·</span>
-    <span class="hi">Azure DevOps</span><span>·</span>
-    <span>React Query</span><span>·</span>
-    <span class="hi">Jest &amp; RTL</span><span>·</span>
-    <span>CI/CD</span><span>·</span>
-    <span class="hi">Entity Framework</span><span>·</span>
-    <span>REST APIs</span><span>·</span>
-    <span class="hi">React</span><span>·</span>
-    <span>TypeScript</span><span>·</span>
-    <span class="hi">C# / .NET Core</span><span>·</span>
-    <span>SQL Server</span><span>·</span>
-    <span class="hi">Azure DevOps</span><span>·</span>
-    <span>React Query</span><span>·</span>
-    <span class="hi">Jest &amp; RTL</span><span>·</span>
-    <span>CI/CD</span><span>·</span>
-    <span class="hi">Entity Framework</span><span>·</span>
-    <span>REST APIs</span><span>·</span>
-  </div>
-</div>
-
-<section id="about">
-  <div class="about-grid">
-    <div class="about-aside">
-      <p class="about-aside-label">About me</p>
-      <h2 class="about-aside-heading">A path built on<br>curiosity <em>&amp; care</em></h2>
-      <div class="about-stat">
-        <div class="about-stat-n">6</div>
-        <div class="about-stat-desc">Years shipping production code</div>
+<section id="about" class="wrap">
+  <div class="frame">
+    <div class="sec-head"><h2 class="sec-title">About me</h2><span class="sec-label">The short version</span></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Before writing a line of code, I spent years working with people in ways that required real listening — as a language educator, a caregiver, and a professional organizer. <strong>Helping someone well means understanding what they actually need</strong> — and that instinct still shapes how I build software.</p>
+        <p>Since 2020 I've been an application developer at Prime Health Services, building React + TypeScript interfaces that internal teams use every day. I own UI/UX decisions end-to-end, design the C#/.NET Core APIs behind them, and keep releases reliable with CI/CD and a healthy test suite. I also mentor junior developers and review code across the team.</p>
+        <p>I'm most interested in work where <strong>thoughtful engineering meets real human impact</strong> — maintainable code, reliable releases, and tools that genuinely save people time. (Also: fluent in French, if your codebase needs it.)</p>
       </div>
-      <div class="about-stat">
-        <div class="about-stat-n">2</div>
-        <div class="about-stat-desc">Applications built from the ground up</div>
+      <div class="fact-stack">
+        <div class="fact"><div class="fact-n">6</div><div class="fact-d">years shipping production code</div></div>
+        <div class="fact"><div class="fact-n">2</div><div class="fact-d">applications built from the ground up</div></div>
+        <div class="fact"><div class="fact-n">2</div><div class="fact-d">junior developers mentored</div></div>
       </div>
-      <div class="about-stat">
-        <div class="about-stat-n">2</div>
-        <div class="about-stat-desc">Junior developers mentored</div>
-      </div>
-    </div>
-    <div class="about-body">
-      <p>Before writing a line of code, I spent years working with people in ways that required real listening — as a language educator, a caregiver, and a professional organizer. <strong>What I learned is that helping someone well means understanding what they actually need</strong> — and that instinct still shapes how I build software.</p>
-      <p>Since 2020 I've been an application developer at Prime Health Services, where I build React + TypeScript interfaces that internal teams use every day. I own UI/UX decisions end-to-end, design the C#/.NET Core APIs behind them, and keep releases reliable with CI/CD in Azure DevOps and a healthy test suite. I also mentor junior developers and review code across the team.</p>
-      <p>I'm most interested in work where <strong>thoughtful engineering meets real human impact</strong> — maintainable code, reliable releases, and tools that genuinely save people time. (Also: fluent in French, if your codebase needs it.)</p>
     </div>
   </div>
 </section>
 
-<section id="experience">
-  <div class="section-header">
-    <p class="section-label">Where I've worked</p>
-    <h2 class="section-heading">Experience</h2>
-  </div>
-  <div class="exp-list">
+<section id="experience" class="wrap">
+  <div class="frame">
+    <div class="sec-head"><h2 class="sec-title">Experience</h2><span class="sec-label">Where I've worked</span></div>
 
-    <div class="exp-row">
-      <div>
-        <div class="exp-dates">2020 — Present</div>
-        <div class="exp-company">Prime Health Services</div>
+    <div class="exp">
+      <div class="exp-meta">
+        <div class="exp-dates">2020 — present</div>
+        <div class="exp-co">Prime Health Services</div>
         <div class="exp-role">Application Developer · Remote / Brentwood, TN</div>
       </div>
       <div class="exp-body">
         <p>I build and ship React + TypeScript interfaces used daily by internal teams — owning UI/UX end-to-end, component architecture, and server-state management with React Query. I delivered <strong>two applications from the ground up</strong>: a billing reconciliation tool and an inventory management system, both backed by a library of reusable shared components.</p>
         <p>On the back end, I design and deploy RESTful APIs in C#/.NET Core powering core business workflows. I implemented <strong>CI/CD pipelines in Azure DevOps</strong> that shortened release cycles, write front-end tests with Jest and React Testing Library, and apply secure data-handling practices to meet HIPAA compliance. I've mentored two junior developers and review code across the team.</p>
-        <div class="exp-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">React Query</span><span class="tag">.NET Core</span><span class="tag">Azure DevOps</span><span class="tag">Jest</span><span class="tag">SQL Server</span></div>
+        <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">React Query</span><span class="tag">.NET Core</span><span class="tag">Azure DevOps</span><span class="tag">Jest</span><span class="tag">SQL Server</span></div>
       </div>
     </div>
 
-    <div class="exp-row">
-      <div>
+    <div class="exp">
+      <div class="exp-meta">
         <div class="exp-dates">2017 — 2019</div>
-        <div class="exp-company">A Fresh Space</div>
+        <div class="exp-co">A Fresh Space</div>
         <div class="exp-role">Team Support · Nashville, TN</div>
       </div>
       <div class="exp-body">
         <p>Built a custom product-catalog tracking workflow from scratch — reducing ordering time and eliminating recurring budget overruns — while managing timelines, resourcing, and client reporting across concurrent engagements.</p>
-        <div class="exp-tags"><span class="tag">Process design</span><span class="tag">Basecamp</span><span class="tag">Harvest</span></div>
+        <div class="tags"><span class="tag">Process design</span><span class="tag">Basecamp</span><span class="tag">Harvest</span></div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="projects">
-  <div class="section-header">
-    <p class="section-label">From the bootcamp years</p>
-    <h2 class="section-heading">Earlier Projects</h2>
-  </div>
-  <div class="project-list">
-
-    <div class="project-row">
-      <div class="project-num">01</div>
-      <div class="project-body">
-        <h3 class="project-title">Travel Keeper</h3>
-        <p class="project-desc">Capstone project where users record trips with locations, accommodations, activities, transportation, and travelers. Built with modular React and JSON-backed storage.</p>
-        <div class="project-tags"><span class="tag">React</span><span class="tag">Webpack</span><span class="tag">Reactstrap</span><span class="tag">NPM</span></div>
-        <a href="https://github.com/laurenelizamax/Travel-Keeper" target="_blank" class="project-link-row">View on GitHub →</a>
-      </div>
-      <div class="project-img-wrap">
-        <img src="https://laurenelizamax.github.io/images/travelkeeper.png" alt="Travel Keeper" class="project-img">
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">02</div>
-      <div class="project-body">
-        <h3 class="project-title">Shelved</h3>
-        <p class="project-desc">Full-stack capstone for tracking books, CDs, and movies — with personal wishlists, watch lists, and viewed lists. ASP.NET MVC with Entity Framework and Identity.</p>
-        <div class="project-tags"><span class="tag">ASP.NET</span><span class="tag">MVC</span><span class="tag">Entity Framework</span><span class="tag">Identity</span></div>
-        <a href="https://github.com/laurenelizamax/Shelved" target="_blank" class="project-link-row">View on GitHub →</a>
-      </div>
-      <div class="project-img-wrap">
-        <img src="https://laurenelizamax.github.io/images/shelved.jpg" alt="Shelved" class="project-img">
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">03</div>
-      <div class="project-body">
-        <h3 class="project-title">Green Monkeys</h3>
-        <p class="project-desc">Full .NET MVC Core front end backed by a custom ADO.NET API. Exposed every database resource via REST, with Entity and Identity Frameworks throughout.</p>
-        <div class="project-tags"><span class="tag">.NET Core</span><span class="tag">Web API</span><span class="tag">ADO.NET</span><span class="tag">REST</span></div>
-      </div>
-      <div class="project-img-wrap">
-        <img src="https://laurenelizamax.github.io/images/greenmonkeys.jpg" alt="Green Monkeys" class="project-img">
-      </div>
-    </div>
-
-
-
-
-  </div>
-</section>
-
-<section id="technologies">
-  <div class="skills-wrap">
-    <div class="section-header" style="margin-bottom:0">
-      <p class="section-label">Toolkit</p>
-      <h2 class="section-heading">Technologies</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/react.svg" alt="React"><span class="skill-name">React</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/javascript.svg" alt="JavaScript"><span class="skill-name">JavaScript</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/csharp.png" alt="C#"><span class="skill-name">C#</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/asp.png" alt="ASP.NET"><span class="skill-name">ASP.NET</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/sql.png" alt="SQL"><span class="skill-name">SQL</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/html.png" alt="HTML5"><span class="skill-name">HTML5</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/css3.svg" alt="CSS3"><span class="skill-name">CSS3</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/bootstrap.svg" alt="Bootstrap"><span class="skill-name">Bootstrap</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/git.svg" alt="Git"><span class="skill-name">Git</span></div>
-      <div class="skill-cell"><img src="https://laurenelizamax.github.io/images/github.svg" alt="GitHub"><span class="skill-name">GitHub</span></div>
-      <div class="skill-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"><span class="skill-name">TypeScript</span></div>
-      <div class="skill-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps"><span class="skill-name">Azure DevOps</span></div>
-      <div class="skill-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest"><span class="skill-name">Jest</span></div>
-      <div class="skill-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET Core"><span class="skill-name">.NET Core</span></div>
-      <div class="skill-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><span class="skill-name">VS Code</span></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="contact-inner">
-    <p class="contact-kicker">Get in touch</p>
-    <h2 class="contact-heading">Let's build<br>something <em>together</em></h2>
-    <p class="contact-sub">I'm open to new opportunities. Whether you have a role in mind or just want to connect, I'd love to hear from you.</p>
-    <div class="contact-grid">
-      <a href="mailto:laurenelizamax@yahoo.com" class="contact-cell">
-        <span class="contact-cell-label">Email</span>
-        <span class="contact-cell-value">laurenelizamax@yahoo.com</span>
-      </a>
-      <a href="https://www.linkedin.com/in/laureneliza/" target="_blank" class="contact-cell">
-        <span class="contact-cell-label">LinkedIn</span>
-        <span class="contact-cell-value">linkedin.com/in/laureneliza</span>
-      </a>
-      <a href="https://github.com/laurenelizamax" target="_blank" class="contact-cell">
-        <span class="contact-cell-label">GitHub</span>
-        <span class="contact-cell-value">github.com/laurenelizamax</span>
-      </a>
-      <a href="https://laurenelizamax.github.io/assets/LMResume.pdf" target="_blank" class="contact-cell">
-        <span class="contact-cell-label">Résumé</span>
-        <span class="contact-cell-value">Download PDF →</span>
-      </a>
+<section id="work" class="wrap">
+  <div class="frame">
+    <div class="sec-head"><h2 class="sec-title">Earlier projects</h2><span class="sec-label">From the bootcamp years</span></div>
+
+    <div class="proj">
+      <div class="proj-body">
+        <h3 class="proj-title">Travel Keeper</h3>
+        <p class="proj-desc">Capstone project where users record trips with locations, accommodations, activities, transportation, and travelers. Built with modular React and JSON-backed storage.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Webpack</span><span class="tag">Reactstrap</span></div>
+        <a class="proj-link" href="https://github.com/laurenelizamax/Travel-Keeper" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="proj-img-wrap"><img class="proj-img" src="images/travelkeeper.png" alt="Travel Keeper app screenshot"></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-body">
+        <h3 class="proj-title">Shelved</h3>
+        <p class="proj-desc">Full-stack capstone for tracking books, CDs, and movies — with personal wishlists, watch lists, and viewed lists. ASP.NET MVC with Entity Framework and Identity.</p>
+        <div class="tags"><span class="tag">ASP.NET</span><span class="tag">MVC</span><span class="tag">Entity Framework</span></div>
+        <a class="proj-link" href="https://github.com/laurenelizamax/Shelved" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="proj-img-wrap"><img class="proj-img" src="images/shelved.jpg" alt="Shelved app screenshot"></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-body">
+        <h3 class="proj-title">Green Monkeys</h3>
+        <p class="proj-desc">Full .NET MVC Core front end backed by a custom ADO.NET API. Exposed every database resource via REST, with Entity and Identity Frameworks throughout.</p>
+        <div class="tags"><span class="tag">.NET Core</span><span class="tag">Web API</span><span class="tag">REST</span></div>
+      </div>
+      <div class="proj-img-wrap"><img class="proj-img" src="images/greenmonkeys.jpg" alt="Green Monkeys app screenshot"></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <span>© 2026 Lauren Maxwell</span>
-  <span>Nashville, TN</span>
+<section id="skills" class="wrap">
+  <div class="frame">
+    <div class="sec-head"><h2 class="sec-title">Toolkit</h2><span class="sec-label">What I work with</span></div>
+    <div class="skill-grid">
+      <div class="skill-cell">React</div>
+      <div class="skill-cell">TypeScript</div>
+      <div class="skill-cell">JavaScript</div>
+      <div class="skill-cell">React Query</div>
+      <div class="skill-cell">C# / .NET Core</div>
+      <div class="skill-cell">Entity Framework</div>
+      <div class="skill-cell">REST APIs</div>
+      <div class="skill-cell">SQL Server</div>
+      <div class="skill-cell">Azure DevOps</div>
+      <div class="skill-cell">CI/CD</div>
+      <div class="skill-cell">Jest &amp; RTL</div>
+      <div class="skill-cell">Git / GitHub</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="frame">
+    <div class="contact-inner">
+      <h2 class="contact-h">Let's build something together.</h2>
+      <p class="contact-sub">I'm open to new opportunities. Whether you have a role in mind or just want to connect, I'd love to hear from you.</p>
+      <div class="contact-links">
+        <a href="mailto:laurenelizamax@yahoo.com">Email me</a>
+        <a href="https://www.linkedin.com/in/laureneliza/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/LMResume.pdf" target="_blank">Resume PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <span>© 2026 Lauren Maxwell</span>
+    <span>Nashville, TN</span>
+  </div>
 </footer>
 
 </body>
