@@ -68,7 +68,7 @@ nav { padding: 2.2rem 0; }
   color: var(--ink-soft); max-width: 26em; line-height: 1.6;
 }
 .hero-line strong { color: var(--ink); font-weight: 500; }
-  .hero-line { position: relative; }
+.hero-line { position: relative; }
 .hero-line .ghost { visibility: hidden; }
 .hero-line .typed { position: absolute; inset: 0; }
 .type-cursor {
@@ -84,7 +84,7 @@ nav { padding: 2.2rem 0; }
 .social-row a:hover { transform: translateY(-2px); }
 .social-row svg { width: 26px; height: 26px; fill: var(--ink); }
 
-/* CODE PANEL (photo slot) */
+/* HERO PHOTO PANEL */
 .hero-panel { background: var(--mocha); border-left: 1.5px solid var(--line); overflow: hidden; }
 .hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -206,10 +206,11 @@ footer { padding: 2rem 0 3rem; }
   <div class="frame hero-box">
     <div class="hero-left">
       <h1 class="hero-name">Lauren Maxwell</h1>
-<p class="hero-line">
-  <span class="ghost" aria-hidden="true">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</span>
-  <span class="typed">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</span>
-</p>      <div class="hero-foot">
+      <p class="hero-line">
+        <span class="ghost" aria-hidden="true">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</span>
+        <span class="typed">I'm a <strong>front-end developer</strong> in Nashville with six years building production web apps in React, TypeScript, and .NET.</span>
+      </p>
+      <div class="hero-foot">
         <div class="hero-handle">@laurenelizamax</div>
         <div class="social-row">
           <a href="https://github.com/laurenelizamax" target="_blank" rel="noopener" aria-label="GitHub">
@@ -302,6 +303,7 @@ footer { padding: 2rem 0 3rem; }
       </div>
       <div class="proj-img-wrap"><img class="proj-img" src="images/shelved.jpg" alt="Shelved app screenshot"></div>
     </div>
+  </div>
 </section>
 
 <section id="skills" class="wrap">
@@ -344,8 +346,7 @@ footer { padding: 2rem 0 3rem; }
   </div>
 </footer>
 
-
-  <script>
+<script>
 (function () {
   var typed = document.querySelector('.hero-line .typed');
   if (!typed) return;
