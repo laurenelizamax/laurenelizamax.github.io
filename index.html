@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +42,7 @@ body {
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; }
 a { color: inherit; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
-
+ 
 /* NAV */
 nav { padding: 2.2rem 0; }
 .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
@@ -49,10 +52,10 @@ nav { padding: 2.2rem 0; }
   transition: border-color 0.2s;
 }
 .nav-row a:hover { border-color: var(--ink); }
-
+ 
 /* FRAMED BOX MOTIF */
 .frame { border: 1.5px solid var(--line); background: var(--cream); }
-
+ 
 /* HERO */
 #bio { padding: 0.5rem 0 3rem; }
 .hero-box { display: grid; grid-template-columns: 1.1fr 0.9fr; min-height: 540px; animation: rise 0.7s ease both; }
@@ -83,17 +86,17 @@ nav { padding: 2.2rem 0; }
 .social-row a { display: inline-flex; transition: transform 0.15s; }
 .social-row a:hover { transform: translateY(-2px); }
 .social-row svg { width: 26px; height: 26px; fill: var(--ink); }
-
+ 
 /* HERO PHOTO PANEL */
 .hero-panel { background: var(--mocha); border-left: 1.5px solid var(--line); overflow: hidden; }
 .hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
-
+ 
 /* SECTION SHELL */
 section { padding: 2.2rem 0; }
 .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.6rem 2.5rem; border-bottom: 1.5px solid var(--line); flex-wrap: wrap; }
 .sec-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.01em; }
 .sec-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
-
+ 
 /* ABOUT */
 .about-head { align-items: center; gap: 1.5rem; justify-content: flex-start; }
 .headshot {
@@ -117,7 +120,7 @@ section { padding: 2.2rem 0; }
 .fact:last-child { border-bottom: none; }
 .fact-n { font-size: 2rem; font-weight: 700; line-height: 1.1; }
 .fact-d { font-size: 0.85rem; color: var(--ink-soft); }
-
+ 
 /* EXPERIENCE */
 .exp { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1.5px solid var(--line); }
 .exp:last-child { border-bottom: none; }
@@ -137,7 +140,7 @@ section { padding: 2.2rem 0; }
 .tags .tag:nth-child(5n+3) { background: var(--mint); }
 .tags .tag:nth-child(5n+4) { background: var(--butter); }
 .tags .tag:nth-child(5n+5) { background: var(--lilac); }
-
+ 
 /* PROJECTS */
 .proj { display: grid; grid-template-columns: 1fr 0.85fr; border-bottom: 1.5px solid var(--line); }
 .proj:last-child { border-bottom: none; }
@@ -151,7 +154,7 @@ section { padding: 2.2rem 0; }
 .proj-link:hover { color: var(--coral); border-color: var(--coral); }
 .proj-img-wrap { border-left: 1.5px solid var(--line); background: var(--cream-deep); padding: 2rem; display: flex; align-items: center; }
 .proj-img { width: 100%; display: block; border: 1.5px solid var(--line); }
-
+ 
 /* SKILLS */
 .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .skill-cell {
@@ -165,7 +168,7 @@ section { padding: 2.2rem 0; }
 .skill-grid .skill-cell:nth-child(5n+5) { background: var(--lilac); }
 .skill-cell:nth-child(4n) { border-right: none; }
 .skill-cell:nth-last-child(-n+4) { border-bottom: none; }
-
+ 
 /* CONTACT */
 .contact-inner { padding: 4rem 2.5rem; text-align: center; }
 .contact-h { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; }
@@ -178,7 +181,7 @@ section { padding: 2.2rem 0; }
 .contact-links a:hover { background: var(--ink); color: var(--cream); }
 footer { padding: 2rem 0 3rem; }
 .foot-row { display: flex; justify-content: space-between; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); flex-wrap: wrap; gap: 0.5rem; }
-
+ 
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .wrap { padding: 0 1.25rem; }
@@ -200,7 +203,7 @@ footer { padding: 2rem 0 3rem; }
 </style>
 </head>
 <body>
-
+ 
 <nav class="wrap" aria-label="Main">
   <div class="nav-row">
     <a href="#bio">Bio</a>
@@ -210,7 +213,7 @@ footer { padding: 2rem 0 3rem; }
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
+ 
 <section id="bio" class="wrap">
   <div class="frame hero-box">
     <div class="hero-left">
@@ -239,7 +242,7 @@ footer { padding: 2rem 0 3rem; }
     </div>
   </div>
 </section>
-
+ 
 <section id="about" class="wrap">
   <div class="frame">
     <div class="sec-head about-head">
@@ -263,11 +266,11 @@ footer { padding: 2rem 0 3rem; }
     </div>
   </div>
 </section>
-
+ 
 <section id="experience" class="wrap">
   <div class="frame">
     <div class="sec-head"><h2 class="sec-title">Experience</h2><span class="sec-label">Where I've worked</span></div>
-
+ 
     <div class="exp">
       <div class="exp-meta">
         <div class="exp-dates">2020 — present</div>
@@ -280,7 +283,7 @@ footer { padding: 2rem 0 3rem; }
         <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">React Query</span><span class="tag">.NET Core</span><span class="tag">Azure DevOps</span><span class="tag">Jest</span><span class="tag">SQL Server</span></div>
       </div>
     </div>
-
+ 
     <div class="exp">
       <div class="exp-meta">
         <div class="exp-dates">2017 — 2019</div>
@@ -294,11 +297,11 @@ footer { padding: 2rem 0 3rem; }
     </div>
   </div>
 </section>
-
+ 
 <section id="work" class="wrap">
   <div class="frame">
     <div class="sec-head"><h2 class="sec-title">Earlier projects</h2><span class="sec-label">From the bootcamp years</span></div>
-
+ 
     <div class="proj">
       <div class="proj-body">
         <h3 class="proj-title">Travel Keeper</h3>
@@ -308,7 +311,7 @@ footer { padding: 2rem 0 3rem; }
       </div>
       <div class="proj-img-wrap"><img class="proj-img" src="images/travelkeeper.png" alt="Travel Keeper app screenshot"></div>
     </div>
-
+ 
     <div class="proj">
       <div class="proj-body">
         <h3 class="proj-title">Shelved</h3>
@@ -320,7 +323,7 @@ footer { padding: 2rem 0 3rem; }
     </div>
   </div>
 </section>
-
+ 
 <section id="skills" class="wrap">
   <div class="frame">
     <div class="sec-head"><h2 class="sec-title">Toolkit</h2><span class="sec-label">What I work with</span></div>
@@ -340,7 +343,7 @@ footer { padding: 2rem 0 3rem; }
     </div>
   </div>
 </section>
-
+ 
 <section id="contact" class="wrap">
   <div class="frame">
     <div class="contact-inner">
@@ -353,37 +356,37 @@ footer { padding: 2rem 0 3rem; }
     </div>
   </div>
 </section>
-
+ 
 <footer class="wrap">
   <div class="foot-row">
     <span>© 2026 Lauren Maxwell</span>
     <span>Nashville, TN</span>
   </div>
 </footer>
-
+ 
 <script>
 (function () {
   var typed = document.querySelector('.hero-line .typed');
   if (!typed) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
+ 
   var segments = Array.prototype.map.call(typed.childNodes, function (node) {
     return { bold: node.nodeType === 1 && node.tagName === 'STRONG', text: node.textContent };
   });
   typed.textContent = '';
-
+ 
   var cursor = document.createElement('span');
   cursor.className = 'type-cursor';
   cursor.setAttribute('aria-hidden', 'true');
   typed.appendChild(cursor);
-
+ 
   var si = 0, ci = 0, target = null;
-
+ 
   function nextTarget() {
     target = segments[si].bold ? document.createElement('strong') : document.createTextNode('');
     typed.insertBefore(target, cursor);
   }
-
+ 
   function tick() {
     if (si >= segments.length) {
       setTimeout(function () { cursor.remove(); }, 2200);
@@ -398,9 +401,12 @@ footer { padding: 2rem 0 3rem; }
     if (',.'.indexOf(ch) > -1) delay += 220;
     setTimeout(tick, delay);
   }
-
+ 
   setTimeout(tick, 650);
 })();
 </script>
 </body>
 </html>
+ 
+
+
