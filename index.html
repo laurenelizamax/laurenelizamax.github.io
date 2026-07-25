@@ -152,6 +152,15 @@ section { padding: 2.2rem 0; }
 .proj-img-wrap { border-left: 1.5px solid var(--line); background: var(--cream-deep); padding: 2rem; display: flex; align-items: center; }
 .proj-img { width: 100%; display: block; border: 1.5px solid var(--line); }
  
+/* EDUCATION */
+.edu { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1.5px solid var(--line); }
+.edu:last-child { border-bottom: none; }
+.edu-meta { padding: 2rem 2.5rem; border-right: 1.5px solid var(--line); }
+.edu-dates { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--coral); margin-bottom: 0.4rem; }
+.edu-school { font-size: 1.1rem; font-weight: 600; line-height: 1.3; }
+.edu-body { padding: 2rem 2.5rem; display: flex; align-items: center; }
+.edu-body p { max-width: 62ch; }
+ 
 /* SKILLS */
 .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .skill-cell {
@@ -183,12 +192,12 @@ footer { padding: 2rem 0 3rem; }
 @media (max-width: 900px) {
   .wrap { padding: 0 1.25rem; }
   .nav-row { justify-content: center; gap: 1.4rem; }
-  .hero-box, .about-grid, .exp, .proj { grid-template-columns: 1fr; }
+  .hero-box, .about-grid, .exp, .proj, .edu { grid-template-columns: 1fr; }
   .hero-left { padding: 2.5rem 1.75rem 2rem; }
-  .hero-panel, .about-text, .exp-meta, .proj-img-wrap { border-left: none; border-right: none; }
+  .hero-panel, .about-text, .exp-meta, .proj-img-wrap, .edu-meta { border-left: none; border-right: none; }
   .hero-panel { border-top: 1.5px solid var(--line); max-height: 420px; }
-  .about-text, .exp-meta { border-bottom: 1.5px solid var(--line); }
-  .about-text, .exp-meta, .exp-body, .proj-body { padding: 1.75rem 1.5rem; }
+  .about-text, .exp-meta, .edu-meta { border-bottom: 1.5px solid var(--line); }
+  .about-text, .exp-meta, .exp-body, .proj-body, .edu-meta, .edu-body { padding: 1.75rem 1.5rem; }
   .fact, .sec-head { padding-left: 1.5rem; padding-right: 1.5rem; }
   .proj-img-wrap { border-top: 1.5px solid var(--line); }
   .skill-grid { grid-template-columns: repeat(2, 1fr); }
@@ -206,6 +215,7 @@ footer { padding: 2rem 0 3rem; }
     <a href="#bio">Bio</a>
     <a href="#experience">Experience</a>
     <a href="#work">Work</a>
+    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
@@ -276,7 +286,8 @@ footer { padding: 2rem 0 3rem; }
       </div>
       <div class="exp-body">
         <p>I build and ship React + TypeScript interfaces used daily by internal teams — owning UI/UX end-to-end, component architecture, and server-state management with React Query. I delivered <strong>two applications from the ground up</strong>: a billing reconciliation tool and an inventory management system, both backed by a library of reusable shared components.</p>
-        <p>On the back end, I design and deploy RESTful APIs in C#/.NET Core powering core business workflows. I implemented <strong>CI/CD pipelines in Azure DevOps</strong> that shortened release cycles, write front-end tests with Vitest and React Testing Library, and apply secure data-handling practices to meet HIPAA compliance.</p>
+        <p>On the back end, I design and deploy scalable RESTful APIs in C#/.NET Core powering core business workflows across multiple integrated systems, and ship features through <strong>Azure DevOps CI/CD pipelines</strong> as part of a regular, reliable release cadence.</p>
+        <p>I write front-end tests with Vitest and React Testing Library to safeguard UI behavior and support confident refactoring, and apply secure data-handling practices to meet HIPAA compliance in a healthcare-technology environment.</p>
         <p>I've mentored two junior developers through onboarding and code review, and review code across the team regardless of author — including senior engineers' and AI-assisted code. I've also integrated <strong>AI-assisted development with Claude Code and Claude</strong> into my daily workflow, speeding feature delivery and catching issues earlier in the development cycle.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">React Query</span><span class="tag">.NET Core</span><span class="tag">Azure DevOps</span><span class="tag">Vitest &amp; RTL</span><span class="tag">SQL Server</span></div>
       </div>
@@ -289,8 +300,31 @@ footer { padding: 2rem 0 3rem; }
         <div class="exp-role">Team Support · Nashville, TN</div>
       </div>
       <div class="exp-body">
-        <p>Built a custom product-catalog tracking workflow from scratch — reducing ordering time and eliminating recurring budget overruns — while managing timelines, resourcing, and client reporting across concurrent engagements.</p>
+        <p>Built a custom product-catalog tracking workflow from scratch — reducing ordering time and eliminating recurring budget overruns. Managed purchasing across online and in-person vendors, coordinated in-person product delivery with the wider team, and maintained inventory to support timely reordering.</p>
+        <p>Managed timelines, resourcing, and client reporting across concurrent engagements using Basecamp and Harvest.</p>
         <div class="tags"><span class="tag">Process design</span><span class="tag">Basecamp</span><span class="tag">Harvest</span></div>
+      </div>
+    </div>
+ 
+    <div class="exp">
+      <div class="exp-meta">
+        <div class="exp-dates">2012 — 2016</div>
+        <div class="exp-co">Nanny</div>
+        <div class="exp-role">Nashville, TN</div>
+      </div>
+      <div class="exp-body">
+        <p>Managed full-time childcare, including daily schedules, transportation, and coordination with parents. Handled household responsibilities including grocery shopping, cleaning, and pet care, keeping the household running smoothly.</p>
+      </div>
+    </div>
+ 
+    <div class="exp">
+      <div class="exp-meta">
+        <div class="exp-dates">2010 — 2012</div>
+        <div class="exp-co">Caregiver</div>
+        <div class="exp-role">Nashville, TN</div>
+      </div>
+      <div class="exp-body">
+        <p>Provided full-time in-home care for a woman in her nineties, managing medications, coordinating medical appointments, and organizing visits with care providers. Balanced day-to-day caregiving responsibilities with scheduling and logistics across multiple providers.</p>
       </div>
     </div>
   </div>
@@ -322,6 +356,42 @@ footer { padding: 2rem 0 3rem; }
   </div>
 </section>
  
+<section id="education" class="wrap">
+  <div class="frame">
+    <div class="sec-head"><h2 class="sec-title">Education</h2><span class="sec-label">Where it started</span></div>
+ 
+    <div class="edu">
+      <div class="edu-meta">
+        <div class="edu-dates">2019 — 2020</div>
+        <div class="edu-school">Nashville Software School</div>
+      </div>
+      <div class="edu-body">
+        <p>Software Development Bootcamp — full-time immersive full-stack program covering C#, .NET, JavaScript, React, and SQL.</p>
+      </div>
+    </div>
+ 
+    <div class="edu">
+      <div class="edu-meta">
+        <div class="edu-dates">2016 — 2017</div>
+        <div class="edu-school">Nashville School of Massage Therapy</div>
+      </div>
+      <div class="edu-body">
+        <p>Massage Therapy Certification — completed certification program.</p>
+      </div>
+    </div>
+ 
+    <div class="edu">
+      <div class="edu-meta">
+        <div class="edu-dates">2007 — 2010</div>
+        <div class="edu-school">Les Cèdres, France</div>
+      </div>
+      <div class="edu-body">
+        <p>Intensive French Language &amp; Culture — achieved professional fluency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <section id="skills" class="wrap">
   <div class="frame">
     <div class="sec-head"><h2 class="sec-title">Toolkit</h2><span class="sec-label">What I work with</span></div>
@@ -330,18 +400,22 @@ footer { padding: 2rem 0 3rem; }
       <div class="skill-cell">TypeScript</div>
       <div class="skill-cell">JavaScript</div>
       <div class="skill-cell">React Query</div>
+      <div class="skill-cell">React Context</div>
       <div class="skill-cell">C# / .NET Core</div>
+      <div class="skill-cell">.NET Framework</div>
       <div class="skill-cell">Entity Framework</div>
       <div class="skill-cell">REST APIs</div>
       <div class="skill-cell">SQL Server</div>
+      <div class="skill-cell">T-SQL</div>
       <div class="skill-cell">Azure DevOps</div>
       <div class="skill-cell">CI/CD</div>
       <div class="skill-cell">Vitest &amp; RTL</div>
+      <div class="skill-cell">TDD</div>
       <div class="skill-cell">Git / GitHub</div>
       <div class="skill-cell">Claude Code</div>
       <div class="skill-cell">GitHub Copilot</div>
-      <div class="skill-cell">TDD</div>
       <div class="skill-cell">Agile / Scrum</div>
+      <div class="skill-cell">French (fluent)</div>
     </div>
   </div>
 </section>
@@ -409,4 +483,5 @@ footer { padding: 2rem 0 3rem; }
 </script>
 </body>
 </html>
+
 
